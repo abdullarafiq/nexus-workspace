@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Workspace | Team Collaboration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Main Application -->
+    <div class="app">
+
+        <!-- Top Navigation Bar -->
+        <header class="topbar">
+            <div class="brand">
+                <div class="brand-logo">N</div>
+                <span>Nexus</span>
+                <span class="workspace-label">Workspace</span>
+            </div>
+
+            <div class="topbar-search">
+                <span>⌕</span>
+                <input type="text" placeholder="Search projects, tasks...">
+                <span class="search-shortcut">Ctrl K</span>
+            </div>
+
+            <div class="topbar-actions">
+                <button class="notification">♧</button>
+                <div class="user-profile">
+                    <div class="avatar purple">AR</div>
+                    <div class="user-info">
+                        <strong>Abdulla Rafiq</strong>
+                        <small>Administrator</small>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Workspace Body -->
+        <div class="workspace-body">
+
+            <!-- Left Sidebar -->
+            <aside class="left-sidebar">
+
+                <div class="sidebar-section">
+                    <p class="section-label">WORKSPACE</p>
+
+                    <a href="#" class="nav-item active">
+                        <span>▦</span> Overview
+                    </a>
+
+                    <a href="#" class="nav-item">
+                        <span>☑</span> My Tasks
+                        <span class="nav-count">5</span>
+                    </a>
+
+                    <a href="#" class="nav-item">
+                        <span>◫</span> Projects
+                    </a>
+
+                    <a href="#" class="nav-item">
+                        <span>▦</span> Calendar
+                    </a>
+
+                    <a href="#" class="nav-item">
+                        <span>▤</span> Files
+                    </a>
+                </div>
+
+                <div class="sidebar-section">
+                    <p class="section-label">YOUR PROJECTS</p>
+
+                    <a href="#" class="project-link">
+                        <span class="project-dot violet"></span>
+                        CampusCircle
+                    </a>
+
+                    <a href="#" class="project-link">
+                        <span class="project-dot green"></span>
+                        Website Redesign
+                    </a>
+
+                    <a href="#" class="project-link">
+                        <span class="project-dot orange"></span>
+                        Mobile Application
+                    </a>
+                </div>
+
+                <div class="sidebar-bottom">
+                    <a href="#" class="nav-item">
+                        <span>⚙</span> Settings
+                    </a>
+                    <a href="#" class="nav-item">
+                        <span>?</span> Help & Support
+                    </a>
+                </div>
+
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="main-content">
+
+                <div class="welcome-row">
+                    <div>
+                        <p class="greeting">MONDAY, NOVEMBER 04, 2026</p>
+                        <h1>Good morning, Abdulla! 👋</h1>
+                        <p class="subtitle">
+                            Here's what's happening in your workspace today.
+                        </p>
+                    </div>
+
+                    <button class="create-button">+ Create New</button>
+                </div>
+
+                <!-- Project Overview -->
+                <section class="project-overview">
+                    <div class="project-heading">
+                        <div>
+                            <span class="project-tag">FEATURED PROJECT</span>
+                            <h2>CampusCircle</h2>
+                            <p>Building a connected campus community.</p>
+                        </div>
+
+                        <span class="status-badge">● In Progress</span>
+                    </div>
+
+                    <div class="progress-info">
+                        <span>Project Progress</span>
+                        <strong>68%</strong>
+                    </div>
+
+                    <div class="progress-track">
+                        <div class="progress-fill"></div>
+                    </div>
+
+                    <div class="project-footer">
+                        <span>12 of 18 tasks completed</span>
+                        <span>Due November 20, 2026</span>
+                    </div>
+                </section>
+
+                <!-- Task Summary -->
+                <section class="tasks-section">
+
+                    <div class="section-heading">
+                        <div>
+                            <h2>Task Overview</h2>
+                            <p>Track your team's progress.</p>
+                        </div>
+                        <a href="#">View all →</a>
+                    </div>
+
+                    <div class="task-cards">
+
+                        <div class="task-card">
+                            <div class="task-card-top">
+                                <span class="task-icon purple-bg">☑</span>
+                                <span class="priority high">High Priority</span>
+                            </div>
+                            <h3>UI Design</h3>
+                            <p>Complete dashboard and mobile interface designs.</p>
+                            <div class="task-meta">
+                                <span>📅 Nov 08</span>
+                                <span class="avatar small purple">AR</span>
+                            </div>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-card-top">
+                                <span class="task-icon green-bg">⌘</span>
+                                <span class="priority medium">Medium</span>
+                            </div>
+                            <h3>Backend Development</h3>
+                            <p>Develop authentication and database integration.</p>
+                            <div class="task-meta">
+                                <span>📅 Nov 12</span>
+                                <span class="avatar small blue">RK</span>
+                            </div>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-card-top">
+                                <span class="task-icon orange-bg">✧</span>
+                                <span class="priority low">Low Priority</span>
+                            </div>
+                            <h3>Testing & Review</h3>
+                            <p>Test features and fix remaining issues.</p>
+                            <div class="task-meta">
+                                <span>📅 Nov 16</span>
+                                <span class="avatar small orange">SM</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Recent Activity -->
+                <section class="activity-section">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Recent Activity</h2>
+                            <p>Latest updates from your projects.</p>
+                        </div>
+                        <a href="#">See all →</a>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="avatar small purple">AR</div>
+                        <div>
+                            <strong>Abdulla Rafiq</strong>
+                            <p>created a new UI Design task.</p>
+                            <small>10 minutes ago</small>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="avatar small blue">RK</div>
+                        <div>
+                            <strong>Rahul Kumar</strong>
+                            <p>updated backend development progress.</p>
+                            <small>1 hour ago</small>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- Right Sidebar -->
+            <aside class="right-sidebar">
+
+                <section class="team-section">
+                    <div class="right-heading">
+                        <h2>Team Members</h2>
+                        <a href="#">See all</a>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="avatar purple">AR</div>
+                        <div class="member-info">
+                            <strong>Abdulla Rafiq</strong>
+                            <small>Project Lead</small>
+                        </div>
+                        <span class="online-dot"></span>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="avatar blue">RK</div>
+                        <div class="member-info">
+                            <strong>Rahul Kumar</strong>
+                            <small>Developer</small>
+                        </div>
+                        <span class="online-dot"></span>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="avatar orange">SM</div>
+                        <div class="member-info">
+                            <strong>Sarah Mathew</strong>
+                            <small>UI Designer</small>
+                        </div>
+                        <span class="offline-dot"></span>
+                    </div>
+                </section>
+
+                <div class="right-divider"></div>
+
+                <!-- Upcoming Deadlines -->
+                <section class="deadline-section">
+                    <div class="right-heading">
+                        <h2>Upcoming Tasks</h2>
+                    </div>
+
+                    <div class="deadline-item">
+                        <div class="deadline-date">
+                            <strong>08</strong>
+                            <small>NOV</small>
+                        </div>
+                        <div>
+                            <strong>UI Design</strong>
+                            <small>CampusCircle</small>
+                        </div>
+                    </div>
+
+                    <div class="deadline-item">
+                        <div class="deadline-date">
+                            <strong>12</strong>
+                            <small>NOV</small>
+                        </div>
+                        <div>
+                            <strong>Backend API</strong>
+                            <small>CampusCircle</small>
+                        </div>
+                    </div>
+
+                    <div class="deadline-item">
+                        <div class="deadline-date">
+                            <strong>16</strong>
+                            <small>NOV</small>
+                        </div>
+                        <div>
+                            <strong>Testing</strong>
+                            <small>Mobile Application</small>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Team Message -->
+                <div class="team-message">
+                    <div class="message-icon">✦</div>
+                    <h3>Great teamwork!</h3>
+                    <p>Your team has completed 68% of the CampusCircle project.</p>
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

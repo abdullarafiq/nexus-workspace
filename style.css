@@ -1,0 +1,851 @@
+
+/* =================================
+   1. GLOBAL STYLES
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f6fa;
+    color: #25243a;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* =================================
+   2. MAIN APPLICATION SHELL
+================================= */
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* =================================
+   3. TOP NAVIGATION BAR
+================================= */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    height: 76px;
+    padding: 0 28px;
+    background: #ffffff;
+    border-bottom: 1px solid #e9eaf0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 21px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: #7155e8;
+    color: white;
+    border-radius: 11px;
+    font-size: 21px;
+}
+
+.workspace-label {
+    font-size: 12px;
+    font-weight: normal;
+    color: #9293a5;
+    margin-left: 4px;
+}
+
+.topbar-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 340px;
+    padding: 10px 14px;
+    background: #f5f5f9;
+    border-radius: 9px;
+    color: #88889a;
+}
+
+.topbar-search input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 13px;
+}
+
+.search-shortcut {
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.notification {
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    color: #55536a;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+}
+
+.user-info small {
+    color: #9293a5;
+}
+
+/* =================================
+   4. WORKSPACE BODY - MAIN FLEX ROW
+================================= */
+
+.workspace-body {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+}
+
+/* =================================
+   5. LEFT SIDEBAR
+================================= */
+
+.left-sidebar {
+    display: flex;
+    flex-direction: column;
+
+    /* Fixed width: grow 0, shrink 0, basis 240px */
+    flex: 0 0 240px;
+
+    padding: 28px 18px;
+    background: #ffffff;
+    border-right: 1px solid #e9eaf0;
+}
+
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 32px;
+}
+
+.section-label {
+    margin: 0 0 10px 10px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #a0a0af;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #77768a;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background: #f0edff;
+    color: #7155e8;
+}
+
+.nav-count {
+    margin-left: auto;
+    font-size: 11px;
+    background: #eeeaff;
+    padding: 3px 8px;
+    border-radius: 10px;
+}
+
+.project-link {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 10px;
+    font-size: 12px;
+    color: #77768a;
+}
+
+.project-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+}
+
+.violet {
+    background: #8969ed;
+}
+
+.green {
+    background: #35bd91;
+}
+
+.orange {
+    background: #f3a65d;
+}
+
+.sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: auto;
+}
+
+/* =================================
+   6. MAIN CONTENT AREA
+================================= */
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+
+    /* Main content grows to fill remaining space */
+    flex: 1 1 0;
+
+    /* Allows the middle area to shrink */
+    min-width: 0;
+
+    padding: 34px 30px;
+    gap: 28px;
+}
+
+/* Welcome section */
+
+.welcome-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.greeting {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #9293a5;
+    margin-bottom: 10px;
+}
+
+.welcome-row h1 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #9293a5;
+}
+
+.create-button {
+    padding: 12px 17px;
+    background: #7155e8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.create-button:hover {
+    background: #5d43ce;
+}
+
+/* =================================
+   7. PROJECT OVERVIEW CARD
+================================= */
+
+.project-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 23px;
+    background: #ffffff;
+    border: 1px solid #e9eaf0;
+    border-radius: 12px;
+}
+
+.project-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.project-tag {
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #8969ed;
+}
+
+.project-heading h2 {
+    margin: 9px 0 5px;
+    font-size: 20px;
+}
+
+.project-heading p {
+    font-size: 12px;
+    color: #9293a5;
+}
+
+.status-badge {
+    padding: 7px 10px;
+    border-radius: 20px;
+    background: #e8f8f0;
+    color: #249d70;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.progress-info strong {
+    color: #7155e8;
+}
+
+.progress-track {
+    width: 100%;
+    height: 8px;
+    background: #efedf7;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 68%;
+    height: 100%;
+    background: #7155e8;
+    border-radius: 20px;
+}
+
+.project-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 10px;
+    color: #9293a5;
+}
+
+/* =================================
+   8. TASK SUMMARY CARDS
+================================= */
+
+.tasks-section {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-heading h2 {
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.section-heading p {
+    font-size: 11px;
+    color: #9293a5;
+}
+
+.section-heading a,
+.right-heading a {
+    font-size: 11px;
+    color: #7155e8;
+}
+
+.task-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.task-card {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+
+    /* Cards share the available space */
+    flex: 1 1 180px;
+
+    min-width: 0;
+    padding: 17px;
+    background: #ffffff;
+    border: 1px solid #e9eaf0;
+    border-radius: 11px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(30, 25, 70, 0.07);
+}
+
+.task-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.task-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 9px;
+    font-size: 17px;
+}
+
+.purple-bg {
+    background: #f0edff;
+    color: #7155e8;
+}
+
+.green-bg {
+    background: #e8f8f0;
+    color: #249d70;
+}
+
+.orange-bg {
+    background: #fff2e5;
+    color: #e69a43;
+}
+
+.priority {
+    font-size: 9px;
+    padding: 5px 7px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.high {
+    background: #fff0ef;
+    color: #e36a63;
+}
+
+.medium {
+    background: #fff5e6;
+    color: #dc9639;
+}
+
+.low {
+    background: #e8f8f0;
+    color: #249d70;
+}
+
+.task-card h3 {
+    font-size: 13px;
+}
+
+.task-card > p {
+    font-size: 11px;
+    line-height: 1.6;
+    color: #9293a5;
+}
+
+.task-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    font-size: 10px;
+    color: #9293a5;
+}
+
+/* =================================
+   9. RECENT ACTIVITY
+================================= */
+
+.activity-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 15px;
+    background: #ffffff;
+    border: 1px solid #e9eaf0;
+    border-radius: 9px;
+}
+
+.activity-item strong {
+    font-size: 11px;
+}
+
+.activity-item p {
+    display: inline;
+    font-size: 11px;
+    color: #77768a;
+}
+
+.activity-item small {
+    display: block;
+    margin-top: 5px;
+    font-size: 9px;
+    color: #a0a0af;
+}
+
+/* =================================
+   10. RIGHT SIDEBAR
+================================= */
+
+.right-sidebar {
+    display: flex;
+    flex-direction: column;
+
+    /* Fixed width: grow 0, shrink 0, basis 280px */
+    flex: 0 0 280px;
+
+    padding: 30px 20px;
+    background: #ffffff;
+    border-left: 1px solid #e9eaf0;
+    gap: 23px;
+}
+
+.right-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 19px;
+}
+
+.right-heading h2 {
+    font-size: 14px;
+}
+
+/* =================================
+   11. TEAM MEMBERS
+================================= */
+
+.team-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.member-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 4px;
+    min-width: 0;
+}
+
+.member-info strong {
+    font-size: 11px;
+}
+
+.member-info small {
+    font-size: 10px;
+    color: #9293a5;
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.avatar.purple {
+    background: #eeeaff;
+    color: #7155e8;
+}
+
+.avatar.blue {
+    background: #e6f1ff;
+    color: #4687d9;
+}
+
+.avatar.orange {
+    background: #fff0df;
+    color: #d88a38;
+}
+
+.avatar.small {
+    width: 27px;
+    height: 27px;
+    font-size: 9px;
+}
+
+.online-dot,
+.offline-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.online-dot {
+    background: #35bd91;
+}
+
+.offline-dot {
+    background: #c5c5d0;
+}
+
+.right-divider {
+    height: 1px;
+    background: #e9eaf0;
+}
+
+/* =================================
+   12. UPCOMING DEADLINES
+================================= */
+
+.deadline-section {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.deadline-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.deadline-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 45px;
+    background: #f2efff;
+    color: #7155e8;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.deadline-date strong {
+    font-size: 15px;
+}
+
+.deadline-date small {
+    font-size: 8px;
+    margin-top: 3px;
+}
+
+.deadline-item > div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.deadline-item > div:last-child strong {
+    font-size: 11px;
+}
+
+.deadline-item > div:last-child small {
+    font-size: 9px;
+    color: #9293a5;
+}
+
+/* =================================
+   13. TEAM MESSAGE
+================================= */
+
+.team-message {
+    padding: 18px;
+    background: #f3f0ff;
+    border-radius: 10px;
+}
+
+.message-icon {
+    color: #7155e8;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.team-message h3 {
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.team-message p {
+    font-size: 10px;
+    line-height: 1.7;
+    color: #77768a;
+}
+
+/* =================================
+   14. RESPONSIVE DESIGN
+================================= */
+
+/* Tablet screens */
+
+@media (max-width: 1100px) {
+
+    .right-sidebar {
+        flex-basis: 240px;
+    }
+
+    .left-sidebar {
+        flex-basis: 210px;
+    }
+
+    .main-content {
+        padding: 25px 20px;
+    }
+
+    .user-info {
+        display: none;
+    }
+}
+
+/* Smaller screens */
+
+@media (max-width: 850px) {
+
+    .right-sidebar {
+        display: none;
+    }
+
+    .left-sidebar {
+        flex-basis: 190px;
+    }
+
+    .topbar-search {
+        width: 240px;
+    }
+}
+
+/* Mobile screens */
+
+@media (max-width: 600px) {
+
+    .topbar {
+        height: auto;
+        min-height: 68px;
+        padding: 12px 15px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .topbar-search {
+        order: 3;
+        width: 100%;
+    }
+
+    .workspace-body {
+        flex-direction: column;
+    }
+
+    .left-sidebar {
+        flex: 0 0 auto;
+        padding: 12px;
+        border-right: none;
+        border-bottom: 1px solid #e9eaf0;
+    }
+
+    .sidebar-section {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+        gap: 5px;
+    }
+
+    .section-label {
+        width: 100%;
+    }
+
+    .nav-item {
+        padding: 9px;
+        font-size: 11px;
+    }
+
+    .project-link,
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .main-content {
+        padding: 22px 15px;
+        gap: 22px;
+    }
+
+    .welcome-row h1 {
+        font-size: 20px;
+    }
+
+    .create-button {
+        padding: 10px;
+        font-size: 10px;
+    }
+
+    .task-card {
+        flex-basis: 100%;
+    }
+
+    .project-footer {
+        flex-direction: column;
+    }
+}
